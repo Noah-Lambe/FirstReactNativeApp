@@ -1,20 +1,22 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image, SafeAreaView } from "react-native";
 
 export default function App() {
+  console.log(require("./assets/favicon.png"));
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start worfsdfking on your app!</Text>
+    <SafeAreaView style={styles.container}>
+      <Text>Hello React Native</Text>
+      <Image source={require("./assets/favicon.png")} />
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#E579FF",
     alignItems: "center",
     justifyContent: "center",
   },
