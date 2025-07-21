@@ -10,30 +10,40 @@ import {
   Button,
   Alert,
 } from "react-native";
-import { useWindowDimensions } from "react-native";
-import { useDeviceOrientation } from "@react-native-community/hooks";
 
 export default function App() {
-  const { width, height } = useWindowDimensions();
-  console.log(width);
-  console.log(height);
-  const isLandscape = width > height;
-  console.log("isLandscape?", isLandscape);
-
-  // const { landscape } = useDeviceOrientation();
-  // console.log("landscape?", landscape);
-  console.log(require("./assets/favicon.png"));
-
   return (
-    <SafeAreaView style={styles.container}>
+    <View
+      style={{
+        backgroundColor: "white",
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "center", // Main axis (horizontal)
+        alignItems: "center", // Secondary axis (vertical)
+      }}
+    >
       <View
         style={{
           backgroundColor: "dodgerblue",
-          width: "100%",
-          height: isLandscape ? "100%" : "30%",
+          width: 100,
+          height: 100,
         }}
-      ></View>
-    </SafeAreaView>
+      />
+      <View
+        style={{
+          backgroundColor: "gold",
+          width: 100,
+          height: 100,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "tomato",
+          width: 100,
+          height: 100,
+        }}
+      />
+    </View>
   );
 }
 
